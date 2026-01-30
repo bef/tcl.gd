@@ -38,6 +38,14 @@ TEA_PATH_TCLCONFIG
 TEA_LOAD_TCLCONFIG
 
 #--------------------------------------------------------------------
+# Require Tcl 9
+#--------------------------------------------------------------------
+
+if test "${TCL_MAJOR_VERSION}" -lt 9; then
+    AC_MSG_ERROR([This extension requires Tcl 9 or later (found ${TCL_VERSION})])
+fi
+
+#--------------------------------------------------------------------
 # Load the tkConfig.sh file if necessary (Tk extension)
 #--------------------------------------------------------------------
 
